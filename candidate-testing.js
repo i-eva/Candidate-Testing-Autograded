@@ -23,7 +23,7 @@ function askForName() {
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-candidateAnswer = input.question(candidateName, " please answer the following question with two words: a first and a last name. Hint: correct capitalization will be important. ", question);
+ candidateAnswer = input.question("Please answer the following question with two words: a first and a last name. ", question);
 
 }
 
@@ -31,9 +31,9 @@ function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   if (candidateAnswer === correctAnswer) {
-    console.log("Great job, ", candidateName, "! That is correct.");
+    console.log("Great job! That is correct.");
  } else {
-    console.log("I'm sorry, ", candidateName, ". ", candidateAnswer, " is not correct.");
+    console.log("I'm sorry, that is not correct.");
  }
 
 
