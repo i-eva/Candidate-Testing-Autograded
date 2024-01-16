@@ -23,7 +23,7 @@ function askForName() {
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
- candidateAnswer = input.question("Please answer the following question with two words: a first and a last name. ", question);
+ candidateAnswer = input.question(question);
 
 }
 
