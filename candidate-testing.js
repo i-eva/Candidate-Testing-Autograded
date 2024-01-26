@@ -31,7 +31,7 @@ function askQuestion() {
   // code from 1.2b: candidateAnswer = input.question(question);
 
   for (let i = 0; i < questions.length; i++) {
-    candidateAnswers.push[i] = input.question(questions[i]);
+    candidateAnswers.push(input.question(questions[i]));
   }
 }
 
@@ -49,7 +49,8 @@ function gradeQuiz(candidateAnswers) {
  // corresponding correct answers.
 
  for (let i = 0; i < questions.length; i++) {
-  console.log(`You responded: ${candidateAnswers[i]} 
+  console.log(`The questions was: ${questions[i]}
+  You responded: ${candidateAnswers[i]} 
   The correct answer is: ${correctAnswers[i]}.`);
   }
   
