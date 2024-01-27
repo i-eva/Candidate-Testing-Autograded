@@ -51,12 +51,13 @@ function gradeQuiz(candidateAnswers) {
  for (let i = 0; i < questions.length; i++) {
   console.log(`The questions was: ${questions[i]}
   You responded: ${candidateAnswers[i]} 
-  The correct answer is: ${correctAnswers[i]}.`);
+  The correct answer is: ${correctAnswers[i]}.
+  `);
   }
   
 
   let grade;  //TODO 3.2 use this variable to calculate the candidates score.
-// Tip: (Number of Correct Answers) / (Number of Quiz Questions) * 100
+ // Tip: (Number of Correct Answers) / (Number of Quiz Questions) * 100
 
   let numberOfQuizQuestions = questions.length;
 
@@ -74,11 +75,34 @@ function gradeQuiz(candidateAnswers) {
 
     modifiedCandidateAnswers.push(candidateAnswers[i].toLowerCase());
     modifiedCorrectAnswers.push(correctAnswers[i].toLowerCase());
-    console.log(modifiedCandidateAnswers, modifiedCorrectAnswers);
+
+   // console.log(modifiedCandidateAnswers, modifiedCorrectAnswers); <- test passed
 
   }
+
+  let numCorrectResponses = 0;
+  for (i = 0; i < numberOfQuizQuestions; i++) {
   
+    if (modifiedCandidateAnswers[i] === modifiedCorrectAnswers[i]) {
+      numCorrectResponses = numCorrectResponses + 1;
+     }
+
+    }  
+
+  // console.log(numCorrectResponses); <- test passed
+  
+  grade = (numCorrectResponses/numberOfQuizQuestions) * 100
+
+  console.log(`Your score is: ${grade}%`); {
+  if (grade < 80) {
+        console.log("Good attempt. You did not pass the quiz this time.");
+    } else {
+        console.log("You passed the quiz! Great job.");
+    }
+  }
+
   return grade;
+
 }
 
 function runProgram() {
