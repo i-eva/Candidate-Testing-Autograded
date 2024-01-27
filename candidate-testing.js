@@ -56,15 +56,35 @@ function gradeQuiz(candidateAnswers) {
   
 
   let grade;  //TODO 3.2 use this variable to calculate the candidates score.
+// Tip: (Number of Correct Answers) / (Number of Quiz Questions) * 100
 
+  let numberOfQuizQuestions = questions.length;
 
+  // console.log (numberOfQuizQuestions); <- test passed
+  // to get the number of correct answers, correct for case sensitivity.
+  // Convert candidateAnswers[] and correctAnswers[] to lowercase.
+
+  let modifiedCorrectAnswers = [];
+  let modifiedCandidateAnswers = [];
+  for (i = 0; i < numberOfQuizQuestions; i++) {
+
+  // console.log(candidateAnswers[i], correctAnswers[i]); <- syntax test passed
+  // console.log((candidateAnswers[i]).toLowerCase(), 
+  // correctAnswers[i].toLowerCase()); <- syntax test passed
+
+    modifiedCandidateAnswers.push(candidateAnswers[i].toLowerCase());
+    modifiedCorrectAnswers.push(correctAnswers[i].toLowerCase());
+    console.log(modifiedCandidateAnswers, modifiedCorrectAnswers);
+
+  }
+  
   return grade;
 }
 
 function runProgram() {
   askForName();
   // TODO 1.1c: Greet candidate using their name //
-   console.log("Welcome, ", candidateName, "! We're glad you're here.");
+   console.log(`Welcome, ${candidateName}! We're glad you're here.`);
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 }
